@@ -1,12 +1,17 @@
 cd src/cxx
 
-export CFLAGS="-fPIC ${CFLAGS}"
-export CXXFLAGS="-fPIC ${CXXFLAGS}"
-export CPATH="${PREFIX}/include"
-
 autoconf
 
+CPATH="${PREFIX}/include"
+
 ./configure --prefix=$PREFIX --enable-noisy-make
+
+# We need to manually add -fPIC because there is no way
+# to force healpix to use it otherwise. We accomplish this
+# by changing the status and then instantiating it
+sed -i s/-fopenmp/"-fopenmp -fPIC"/g config.status
+
+./config.status
 
 make -j ${CPU_COUNT}
 
@@ -15,3 +20,4 @@ cp -r auto/lib/* ${PREFIX}/lib
 mkdir ${PREFIX}/include/healpix_cxx
 cp -r auto/include/* ${PREFIX}/include/healpix_cxx
 cp -r auto/bin/* ${PREFIX}/bin
+
