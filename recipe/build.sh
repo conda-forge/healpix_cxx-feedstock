@@ -9,7 +9,7 @@ CPATH="${PREFIX}/include"
 # We need to manually add -fPIC because there is no way
 # to force healpix to use it otherwise. We accomplish this
 # by changing the status and then instantiating it
-sed -i '' 's/-fopenmp/-fopenmp -fPIC/g' config.status
+sed -i '' 's/-O2/-O2 -fPIC/g' config.status
 
 ./config.status
 
