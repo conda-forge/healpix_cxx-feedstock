@@ -18,14 +18,16 @@ by high resolution and large volume data sets, such as the WMAP and Planck CMB m
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/healpix_cxx-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/healpix_cxx-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/healpix_cxx-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/healpix_cxx-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/healpix_cxx-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/healpix_cxx-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/healpix_cxx-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/healpix_cxx-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/healpix_cxx/badges/version.svg)](https://anaconda.org/conda-forge/healpix_cxx)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/healpix_cxx/badges/downloads.svg)](https://anaconda.org/conda-forge/healpix_cxx)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-healpix_cxx-green.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) |
 
 Installing healpix_cxx
 ======================
