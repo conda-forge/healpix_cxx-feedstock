@@ -9,7 +9,16 @@ CPATH="${PREFIX}/include"
 # We need to manually add -fPIC because there is no way
 # to force healpix to use it otherwise. We accomplish this
 # by changing the status and then instantiating it
-sed -i '' 's/-O2/-O2 -fPIC/g' config.status
+
+if [ "$(uname)" == "Darwin" ]; then
+    
+    sed -i '' 's/-O2/-O2 -fPIC/g' config.status
+
+else
+
+    sed 's/-O2/-O2 -fPIC/g' config.status
+
+fi
 
 ./config.status
 
