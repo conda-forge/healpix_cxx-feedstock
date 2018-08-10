@@ -14,17 +14,20 @@ source:
 build:
   number: 2
   skip: true  # [win]
-  
+
 requirements:
   build:
-    - toolchain
     - autoconf
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - cfitsio
-#    - openssl
+
   run:
+
     - cfitsio
-#    - openssl
-    
+
 test:
   commands:
     - test -f ${PREFIX}/lib/libhealpix_cxx.a
@@ -35,7 +38,7 @@ test:
     - test -d ${PREFIX}/include/healpix_cxx
     - conda inspect linkages -p $PREFIX healpix_cxx  # [not win]
     - conda inspect objects -p $PREFIX healpix_cxx  # [osx]
-    
+
     # Test executables
     - syn_alm_cxx fwhm_arcmin=60 infile=cl.fits rand_seed=1234 nlmax=512 outfile=\!test.alm polarisation=true
     - alm2map_cxx nlmax=512 infile=test.alm outfile=\!test.fits nside=256 polarisation=true
@@ -66,9 +69,9 @@ about:
   license_file: COPYING
   summary: 'Software for pixelization, hierarchical indexation, synthesis, analysis, and visualization of data on the sphere.'
   description: |
-    HEALPix is a Hierarchical, Equal Area, and iso-Latitude Pixelation of the sphere designed to support efficiently (1) 
-    local operations on the pixel set, (2) a hierarchical tree structure for multi-resolution applications, and (3) 
-    the global Fast Spherical Harmonic transform. HEALPix based mathematical software meets the challenges presented 
+    HEALPix is a Hierarchical, Equal Area, and iso-Latitude Pixelation of the sphere designed to support efficiently (1)
+    local operations on the pixel set, (2) a hierarchical tree structure for multi-resolution applications, and (3)
+    the global Fast Spherical Harmonic transform. HEALPix based mathematical software meets the challenges presented
     by high resolution and large volume data sets, such as the WMAP and Planck CMB mission products.
   doc_url: http://healpix.sf.net/documentation.php
   dev_url: https://sourceforge.net/projects/healpix/
