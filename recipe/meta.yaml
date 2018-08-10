@@ -23,10 +23,10 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cfitsio
-#    - openssl
+
   run:
+
     - cfitsio
-#    - openssl
 
 test:
   commands:
