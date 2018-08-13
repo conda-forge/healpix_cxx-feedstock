@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else
 
-    sed 's/-O2/-O2 -fPIC/g' config.status
+    sed -i 's/-O2/-O2 -fPIC/g' config.status
 
 fi
 
