@@ -13,11 +13,13 @@ CPATH="${PREFIX}/include"
 if [ "$(uname)" == "Darwin" ]; then
     
     sed -i '' 's/-O2/-O2 -fPIC/g' config.status
+    sed -i '' 's/-O3/-O3 -fPIC/g' config.status
 
 else
 
     sed -i 's/-O2/-O2 -fPIC/g' config.status
-
+    sed -i 's/-O3/-O3 -fPIC/g' config.status
+    
 fi
 
 ./config.status
