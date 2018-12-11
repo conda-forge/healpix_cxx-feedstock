@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 1000
   skip: true  # [win]
 
 requirements:
@@ -23,9 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cfitsio
-
   run:
-
     - cfitsio
 
 test:
@@ -81,3 +79,4 @@ extra:
     - giacomov
     - jasercion
     - Areustle
+    - beckermr

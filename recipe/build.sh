@@ -2,7 +2,7 @@ cd src/cxx
 
 autoconf
 
-CPATH="${PREFIX}/include"
+export CPATH="${PREFIX}/include"
 
 ./configure --prefix=$PREFIX --enable-noisy-make
 
