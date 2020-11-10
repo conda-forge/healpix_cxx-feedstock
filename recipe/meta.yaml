@@ -22,10 +22,8 @@ requirements:
     - make  # [not win]
   host:
     - cfitsio
-    - openmp
   run:
     - cfitsio
-    - openmp
 
 test:
   commands:
