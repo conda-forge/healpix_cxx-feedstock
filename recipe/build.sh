@@ -1,34 +1,17 @@
+
+cd src/common_libraries/libsharp
+
+./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking
+
+make install -j ${CPU_COUNT}
+
+cd -
+
 cd src/cxx
 
-autoconf
+export SHARP_CFLAGS="-I$PREFIX/include"
+export SHARP_LIBS="-L$PREFIX/lib -lsharp"
 
-export CPATH="${PREFIX}/include"
+./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking
 
-./configure --prefix=$PREFIX --enable-noisy-make
-
-# We need to manually add -fPIC because there is no way
-# to force healpix to use it otherwise. We accomplish this
-# by changing the status and then instantiating it
-
-if [ "$(uname)" == "Darwin" ]; then
-    
-    sed -i '' 's/-O2/-O2 -fPIC/g' config.status
-    sed -i '' 's/-O3/-O3 -fPIC/g' config.status
-
-else
-
-    sed -i 's/-O2/-O2 -fPIC/g' config.status
-    sed -i 's/-O3/-O3 -fPIC/g' config.status
-    
-fi
-
-./config.status
-
-make -j ${CPU_COUNT}
-
-# There is no "make install", so we do it manually
-cp -r auto/lib/* ${PREFIX}/lib
-mkdir ${PREFIX}/include/healpix_cxx
-cp -r auto/include/* ${PREFIX}/include/healpix_cxx
-cp -r auto/bin/* ${PREFIX}/bin
-
+make install -j ${CPU_COUNT}
