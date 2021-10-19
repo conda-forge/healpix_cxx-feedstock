@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1003
+  number: 1004
   skip: true  # [win]
 
 requirements:
@@ -34,8 +34,6 @@ test:
     - test -f ${PREFIX}/lib/libfftpack.a
     - test -f ${PREFIX}/lib/libsharp.a
     - test -d ${PREFIX}/include/healpix_cxx
-    - conda inspect linkages -p $PREFIX healpix_cxx  # [not win]
-    - conda inspect objects -p $PREFIX healpix_cxx  # [osx]
 
     # Test executables
     - syn_alm_cxx fwhm_arcmin=60 infile=cl.fits rand_seed=1234 nlmax=512 outfile=\!test.alm polarisation=true
