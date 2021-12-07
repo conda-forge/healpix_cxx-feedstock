@@ -27,8 +27,8 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libhealpix_cxx.a
-    - test -f ${PREFIX}/lib/libsharp.a
+    - test -f ${PREFIX}/lib/libhealpix_cxx.so
+    - test -f ${PREFIX}/lib/libsharp.so
     - test -d ${PREFIX}/include/healpix_cxx
     - conda inspect linkages -p $PREFIX healpix_cxx  # [not win]
     - conda inspect objects -p $PREFIX healpix_cxx  # [osx]
