@@ -27,8 +27,8 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libhealpix_cxx.so  # [unix]
-    - test -f ${PREFIX}/lib/libsharp.so  # [unix]
+    - test -f ${PREFIX}/lib/libhealpix_cxx.so  # [linux]
+    - test -f ${PREFIX}/lib/libsharp.so  # [linux]
     - test -f ${PREFIX}/lib/libhealpix_cxx.dylib  # [osx]
     - test -f ${PREFIX}/lib/libsharp.dylib  # [osx]
     - test -d ${PREFIX}/include/healpix_cxx
