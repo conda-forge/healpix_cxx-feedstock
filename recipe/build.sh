@@ -29,3 +29,8 @@ export SHARP_LIBS="-L$PREFIX/lib -lsharp"
 ./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking --enable-shared
 
 make install -j ${CPU_COUNT}
+
+cd -
+
+#Copy and rename the libsharp lisence
+cp src/common_libraries/libsharp/COPYING COPYING-libsharp

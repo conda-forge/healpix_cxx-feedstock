@@ -60,7 +60,9 @@ about:
   home: https://sourceforge.net/projects/healpix/
   license: GPL-2.0-or-later
   license_family: GPL
-  license_file: COPYING
+  license_file:
+    - COPYING
+    - COPYING-libsharp
   summary: 'Software for pixelization, hierarchical indexation, synthesis, analysis, and visualization of data on the sphere.'
   description: |
     HEALPix is a Hierarchical, Equal Area, and iso-Latitude Pixelation of the sphere designed to support efficiently (1)
