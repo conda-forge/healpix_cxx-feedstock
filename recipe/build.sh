@@ -32,7 +32,16 @@ make install -j ${CPU_COUNT}
 
 cd -
 
-${CC} -shared -o $PREFIX/lib/libhealpix_cxx.so -Wl,--whole-archive $PREFIX/lib/libsharp.a $PREFIX/lib/libhealpix_cxx.a -Wl,--no-whole-archive ${CFLAGS} ${LDFLAGS}
+if [ "$(uname)" == "Darwin" ]; then
+
+    ${CC} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.so -Wl,--whole-archive $PREFIX/lib/libsharp.a $PREFIX/lib/libhealpix_cxx.a -Wl,--no-whole-archive ${CFLAGS} ${LDFLAGS}
+
+else
+
+    ${CC} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.dylib -Wl,-force_load $PREFIX/lib/libsharp.a -Wl,-force_load $PREFIX/lib/libhealpix_cxx.a ${CFLAGS} ${LDFLAGS}
+
+fi
+
 rm $PREFIX/lib/libsharp.a
 rm $PREFIX/lib/libhealpix_cxx.a
 
