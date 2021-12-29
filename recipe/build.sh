@@ -34,11 +34,11 @@ cd -
 
 if [ "$(uname)" == "Darwin" ]; then
 
-    ${CXX} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.dylib -Wl,-force_load $PREFIX/lib/libhealpix_cxx.a -Wl,-force_load $PREFIX/lib/libsharp.a -lomp -lcfitsio ${CFLAGS} ${LDFLAGS}
+    ${CXX} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.dylib -Wl,-force_load $PREFIX/lib/libhealpix_cxx.a -Wl,-force_load $PREFIX/lib/libsharp.a -lomp -lcfitsio ${CXXFLAGS} ${LDFLAGS}
 
 else
 
-    ${CXX} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.so -Wl,--whole-archive $PREFIX/lib/libsharp.a $PREFIX/lib/libhealpix_cxx.a -Wl,--no-whole-archive ${CFLAGS} ${LDFLAGS}
+    ${CXX} -fPIC -shared -o $PREFIX/lib/libhealpix_cxx.so -Wl,--whole-archive $PREFIX/lib/libsharp.a $PREFIX/lib/libhealpix_cxx.a -Wl,--no-whole-archive ${CXXFLAGS} ${LDFLAGS}
 
 fi
 
