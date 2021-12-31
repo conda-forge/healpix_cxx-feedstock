@@ -12,6 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  run_exports:
+    - {{ pin_subpackage("healpix_cxx", max_pin="x.x") }}
   number: 0
   skip: true  # [win]
 
