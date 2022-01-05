@@ -10,14 +10,19 @@ source:
   fn: Healpix_{{ version }}_2016Aug26.tar.gz
   url: https://downloads.sourceforge.net/project/healpix/Healpix_{{ version }}/Healpix_{{ version }}_2016Aug26.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/Makefile.am.patch
 
 build:
-  number: 1003
+  number: 1004
   skip: true  # [win]
 
 requirements:
   build:
     - autoconf
+    - automake
+    - libtool
+    - pkg-config
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -28,12 +33,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libhealpix_cxx.a
-    - test -f ${PREFIX}/lib/libc_utils.a
-    - test -f ${PREFIX}/lib/libcxxsupport.a
-    - test -f ${PREFIX}/lib/libfftpack.a
-    - test -f ${PREFIX}/lib/libsharp.a
-    - test -d ${PREFIX}/include/healpix_cxx
+    - test -f ${PREFIX}/lib/libhealpix_cxx.so
     - conda inspect linkages -p $PREFIX healpix_cxx  # [not win]
     - conda inspect objects -p $PREFIX healpix_cxx  # [osx]
 
