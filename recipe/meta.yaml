@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - patches/Makefile.am.patch
+    - patches/configure.ac.patch
 
 build:
   number: 1004
