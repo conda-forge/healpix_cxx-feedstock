@@ -20,7 +20,9 @@ make install -j ${CPU_COUNT}
 
 cd -
 
+# delete all libsharp files as they are not needed
 rm $PREFIX/lib/libsharp.a
+rm -rf  $PREFIX/include/libsharp
 
 # Copy and rename the libsharp lisence
 cp src/common_libraries/libsharp/COPYING COPYING-libsharp
