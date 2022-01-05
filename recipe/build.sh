@@ -2,11 +2,11 @@ cd src/cxx/autotools
 
 ln -s ../alice alice
 
-autoreconf -i
+autoreconf --install
 
 export CPATH="${PREFIX}/include"
 
-./configure --prefix=$PREFIX
+./configure --prefix=$PREFIX --disable-dependency-tracking
 
 make -j ${CPU_COUNT}
 make install
