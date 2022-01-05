@@ -1,9 +1,0 @@
---- src/cxx/autotools/configure.ac.orig	2022-01-05 14:42:27.976535545 -0500
-+++ src/cxx/autotools/configure.ac	2022-01-05 14:39:13.223707469 -0500
-@@ -1,4 +1,6 @@
- AC_INIT([healpix_cxx], [3.30.0])
-+AC_ENABLE_SHARED
-+AC_DISABLE_STATIC
- AM_INIT_AUTOMAKE([foreign subdir-objects -Wall -Werror])
- AM_MAINTAINER_MODE([enable])
- 
