@@ -11,4 +11,10 @@ export CPATH="${PREFIX}/include"
 
 make -j ${CPU_COUNT} install
 
+# don't export libsharp include files
+rm -rf $PREFIX/include/libsharp
+rm -rf $PREFIX/include/healpix_cxx/sharp*.h
+rm -rf $PREFIX/include/healpix_cxx/sharp*.c
+
+
 
