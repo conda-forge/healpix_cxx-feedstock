@@ -26,7 +26,6 @@ requirements:
     - libtool
     - pkg-config
     - make
-    - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
