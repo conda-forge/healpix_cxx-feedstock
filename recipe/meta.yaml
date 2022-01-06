@@ -14,6 +14,8 @@ source:
     - patches/Makefile.am.patch
 
 build:
+  run_exports:
+    - {{ pin_subpackage("healpix_cxx", max_pin="x.x") }}
   number: 1004
   skip: true  # [win]
 
