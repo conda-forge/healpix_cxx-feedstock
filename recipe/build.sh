@@ -1,8 +1,8 @@
 # Build libsharp
 cd src/common_libraries/libsharp
 
-# Add -fPIC flag so libsharp.a can be linked into libhealpix_cxx later
-CXXFLAGS=-fPIC CFLAGS=-fPIC ./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking --disable-shared
+# Add enable-pic flag so libsharp.a can be linked into libhealpix_cxx later
+./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking --disable-shared --enable-pic
 
 make install -j ${CPU_COUNT}
 
@@ -22,7 +22,8 @@ cd -
 
 # delete all libsharp files as they are not needed
 rm $PREFIX/lib/libsharp.a
-rm -rf  $PREFIX/include/libsharp
+rm -rf $PREFIX/include/libsharp
+rm -rf lib/pkgconfig/libsharp.pc
 
 # Copy and rename the libsharp lisence
 cp src/common_libraries/libsharp/COPYING COPYING-libsharp
