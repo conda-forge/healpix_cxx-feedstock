@@ -26,6 +26,8 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - libgomp  # [linux]
+    - llvm-openmp  # [osx]
   host:
     - cfitsio
   run:
