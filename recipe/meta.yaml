@@ -23,7 +23,6 @@ build:
 requirements:
   build:
     - autoconf
-    - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
