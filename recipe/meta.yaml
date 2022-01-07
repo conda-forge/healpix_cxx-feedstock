@@ -27,6 +27,7 @@ requirements:
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
+    - make
   host:
     - cfitsio
   run:
