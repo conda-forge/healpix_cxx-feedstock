@@ -1,20 +1,29 @@
-cd src/cxx/autotools
+# Build libsharp
+cd src/common_libraries/libsharp
 
-# link and autoreconf are required to build alice
-# after patching configure.ac
-ln -s ../alice alice
-autoreconf --install
+# Add enable-pic flag so libsharp.a can be linked into libhealpix_cxx later
+./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking --disable-shared --enable-pic
 
-export CPATH="${PREFIX}/include"
+make install -j ${CPU_COUNT}
+
+cd -
+
+cd src/cxx
+
+# Build libhealpix_cxx
+export SHARP_CFLAGS="-I$PREFIX/include"
+export SHARP_LIBS="-L$PREFIX/lib -lsharp"
 
 ./configure --prefix=$PREFIX --disable-silent-rules --disable-dependency-tracking --disable-static
 
-make -j ${CPU_COUNT} install
+make install -j ${CPU_COUNT}
 
-# don't export libsharp include files
+cd -
+
+# delete all libsharp files as they are not needed
+rm -f  $PREFIX/lib/libsharp.a
 rm -rf $PREFIX/include/libsharp
-rm -rf $PREFIX/include/healpix_cxx/sharp*.h
-rm -rf $PREFIX/include/healpix_cxx/sharp*.c
+rm -rf $PREFIX/lib/pkgconfig/libsharp.pc
 
-
-
+# Copy and rename the libsharp lisence
+cp src/common_libraries/libsharp/COPYING COPYING-libsharp
