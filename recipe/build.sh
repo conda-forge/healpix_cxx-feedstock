@@ -23,5 +23,12 @@ make install -j ${CPU_COUNT}
 
 cd -
 
+# delete all libsharp files as they are not needed
+rm -f  $PREFIX/lib/libsharp.a
+mkdir -p $PREFIX/include/healpix_cxx
+mv $PREFIX/include/libsharp $PREFIX/include/healpix_cxx
+rm -rf $PREFIX/lib/pkgconfig/libsharp.pc
+
+
 # Copy and rename the libsharp lisence
 cp src/common_libraries/libsharp/COPYING COPYING-libsharp
