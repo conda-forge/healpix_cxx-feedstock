@@ -1,10 +1,7 @@
 # Build libsharp
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./src/common_libraries/libsharp
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./src/healpy/cfitsio
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./src/healpy/healpixsubmodule/src/common_libraries/libsharp
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./src/cxx
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./src/healpy/healpixsubmodule/src/cxx
 cd src/common_libraries/libsharp
 
 # Add enable-pic flag so libsharp.a can be linked into libhealpix_cxx later
@@ -28,8 +25,10 @@ cd -
 
 # delete all libsharp files as they are not needed
 rm -f  $PREFIX/lib/libsharp.a
-rm -rf $PREFIX/include/libsharp
+mkdir -p $PREFIX/include/healpix_cxx
+mv $PREFIX/include/libsharp $PREFIX/include/healpix_cxx
 rm -rf $PREFIX/lib/pkgconfig/libsharp.pc
+
 
 # Copy and rename the libsharp lisence
 cp src/common_libraries/libsharp/COPYING COPYING-libsharp
