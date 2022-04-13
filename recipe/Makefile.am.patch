@@ -1,0 +1,26 @@
+--- src/cxx/autotools/Makefile.am.orig	2015-08-12 05:18:39.000000000 -0400
++++ src/cxx/autotools/Makefile.am	2022-01-05 01:59:29.087106652 -0500
+@@ -163,7 +163,7 @@
+ 
+ bin_PROGRAMS = alm2map_cxx anafast_cxx calc_powspec hotspots_cxx map2tga \
+   median_filter_cxx mult_alm rotalm_cxx smoothing_cxx syn_alm_cxx udgrade_cxx \
+-  udgrade_harmonic_cxx
++  udgrade_harmonic_cxx alice3
+ check_PROGRAMS = hpxtest
+ alm2map_cxx_SOURCES = Healpix_cxx/alm2map_cxx.cc
+ alm2map_cxx_LDADD = libhealpix_cxx.la
+@@ -204,10 +204,12 @@
+ hpxtest_SOURCES=Healpix_cxx/hpxtest.cc
+ hpxtest_LDADD = libhealpix_cxx.la
+ hpxtest_LDFLAGS = -static-libtool-libs
+-
++alice3_SOURCES = alice/alice3.cc
++alice3_LDADD = libhealpix_cxx.la
++alice3_LDFLAGS = -static-libtool-libs
+ TESTS=hpxtest
+ 
+-AM_CPPFLAGS = $(CFITSIO_CFLAGS) -I$(top_srcdir)/c_utils -I$(top_srcdir)/libfftpack -I$(top_srcdir)/libsharp -I$(top_srcdir)/cxxsupport
++AM_CPPFLAGS = $(CFITSIO_CFLAGS) -I$(top_srcdir)/Healpix_cxx -I$(top_srcdir)/c_utils -I$(top_srcdir)/libfftpack -I$(top_srcdir)/libsharp -I$(top_srcdir)/cxxsupport
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ nodist_pkgconfig_DATA = @PACKAGE_NAME@.pc
