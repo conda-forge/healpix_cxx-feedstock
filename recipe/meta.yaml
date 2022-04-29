@@ -11,16 +11,13 @@ source:
   url: https://downloads.sourceforge.net/project/healpix/Healpix_{{ version }}/Healpix_{{ version }}_2016Aug26.tar.gz
   sha256: {{ sha256 }}
   patches:
-    # backport https://sourceforge.net/p/healpix/code/1189/
-    - 1189.patch
-    # backport https://sourceforge.net/p/healpix/code/1190/
-    - 1190.patch
+    - fitshandle.cfitsio.patch
     - Makefile.am.patch
 
 build:
   run_exports:
     - {{ pin_subpackage("healpix_cxx", max_pin="x.x") }}
-  number: 1006
+  number: 1007
   skip: true  # [win]
 
 requirements:
