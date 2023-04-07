@@ -25,6 +25,7 @@ requirements:
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - make
+    - pkg-config
   host:
     - cfitsio
     - zlib  # [linux]
