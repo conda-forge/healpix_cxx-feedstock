@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
+    - zlib  # [linux]
     - llvm-openmp  # [osx]
     - make
   host:
