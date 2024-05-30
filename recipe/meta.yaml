@@ -22,6 +22,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - make
