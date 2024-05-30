@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - gnuconfig  # [unix]
+    - libtool
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
