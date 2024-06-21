@@ -14,13 +14,14 @@ source:
 build:
   run_exports:
     - {{ pin_subpackage("healpix_cxx", max_pin="x.x") }}
-  number: 3
+  number: 4
   skip: true  # [win]
 
 requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
