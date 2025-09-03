@@ -84,7 +84,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-healpix_cxx-green.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-healpix__cxx-green.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/healpix_cxx.svg)](https://anaconda.org/conda-forge/healpix_cxx) |
 
 Installing healpix_cxx
 ======================
