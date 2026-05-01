@@ -201,5 +201,6 @@ Feedstock Maintainers
 =====================
 
 * [@Areustle](https://github.com/Areustle/)
+* [@giacomov](https://github.com/giacomov/)
 * [@jasercion](https://github.com/jasercion/)
 
